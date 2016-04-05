@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="InvestigadorViewDlg" widgetVar="InvestigadorViewDialog" modal="true" resizable="false"  appendTo="@(body)" header="#{myBundle.ViewInvestigadorTitle}" closeOnEscape="true">
+
+            <h:form id="InvestigadorViewForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" columnClasses="column" rendered="#{investigadorController.selected != null}">
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_idInvestigador}"/>
+                        <h:outputText value="#{investigadorController.selected.idInvestigador}" title="#{myBundle.ViewInvestigadorTitle_idInvestigador}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inNombres}"/>
+                        <h:outputText value="#{investigadorController.selected.inNombres}" title="#{myBundle.ViewInvestigadorTitle_inNombres}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inApellido1}"/>
+                        <h:outputText value="#{investigadorController.selected.inApellido1}" title="#{myBundle.ViewInvestigadorTitle_inApellido1}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inApellido2}"/>
+                        <h:outputText value="#{investigadorController.selected.inApellido2}" title="#{myBundle.ViewInvestigadorTitle_inApellido2}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inTipoIdentificacion}"/>
+                        <h:outputText value="#{investigadorController.selected.inTipoIdentificacion}" title="#{myBundle.ViewInvestigadorTitle_inTipoIdentificacion}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inNumIdentificacion}"/>
+                        <h:outputText value="#{investigadorController.selected.inNumIdentificacion}" title="#{myBundle.ViewInvestigadorTitle_inNumIdentificacion}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inFechaNac}"/>
+                        <h:outputText value="#{investigadorController.selected.inFechaNac}" title="#{myBundle.ViewInvestigadorTitle_inFechaNac}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inDireccion}"/>
+                        <h:outputText value="#{investigadorController.selected.inDireccion}" title="#{myBundle.ViewInvestigadorTitle_inDireccion}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inTelefono}"/>
+                        <h:outputText value="#{investigadorController.selected.inTelefono}" title="#{myBundle.ViewInvestigadorTitle_inTelefono}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inMovil}"/>
+                        <h:outputText value="#{investigadorController.selected.inMovil}" title="#{myBundle.ViewInvestigadorTitle_inMovil}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inTipoInves}"/>
+                        <h:outputText value="#{investigadorController.selected.inTipoInves}" title="#{myBundle.ViewInvestigadorTitle_inTipoInves}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inEstado}"/>
+                        <h:outputText value="#{investigadorController.selected.inEstado}" title="#{myBundle.ViewInvestigadorTitle_inEstado}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inSalario}"/>
+                        <h:outputText value="#{investigadorController.selected.inSalario}" title="#{myBundle.ViewInvestigadorTitle_inSalario}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inContraseña}"/>
+                        <h:outputText value="#{investigadorController.selected.inContraseña}" title="#{myBundle.ViewInvestigadorTitle_inContraseña}"/>
+
+                        <h:outputText value="#{myBundle.ViewInvestigadorLabel_inObservacion}"/>
+                        <h:outputText value="#{investigadorController.selected.inObservacion}" title="#{myBundle.ViewInvestigadorTitle_inObservacion}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{myBundle.Close}" onclick="PF('InvestigadorViewDialog').hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

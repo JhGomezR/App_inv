@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h:form id="InvestigadorListForm">
+
+        <p:panel header="#{myBundle.ListInvestigadorTitle}">
+            <p:contextMenu id="InvestigadorDataTableContextMenu" for="datalist">  
+                <p:menuitem value="#{myBundle.Create}" onclick="document.getElementById('InvestigadorListForm:createButton').click();" icon="ui-icon-plus"/>
+                <p:menuitem value="#{myBundle.View}" onclick="document.getElementById('InvestigadorListForm:viewButton').click();" icon="ui-icon-search"/>
+                <p:menuitem value="#{myBundle.Edit}" onclick="document.getElementById('InvestigadorListForm:editButton').click();" icon="ui-icon-pencil"/>
+                <p:menuitem value="#{myBundle.Delete}" onclick="document.getElementById('InvestigadorListForm:deleteButton').click();" icon="ui-icon-trash"/>
+            </p:contextMenu>
+            <p:dataTable id="datalist"
+                         value="#{investigadorController.items}"
+                         var="item"
+                         rowKey="#{item.idInvestigador}"
+                         paginator="true"
+                         rows="10"
+                         rowsPerPageTemplate="10,20,30,40,50"
+                         selectionMode="single"
+                         selection="#{investigadorController.selected}">
+
+                <p:ajax event="rowSelect"   update=":InvestigadorListForm:createButton :InvestigadorListForm:viewButton :InvestigadorListForm:editButton :InvestigadorListForm:deleteButton :InvestigadorListForm:InvestigadorDataTableContextMenu"/>
+                <p:ajax event="rowUnselect" update=":InvestigadorListForm:createButton :InvestigadorListForm:viewButton :InvestigadorListForm:editButton :InvestigadorListForm:deleteButton :InvestigadorListForm:InvestigadorDataTableContextMenu"/>
+                <p:ajax event="contextMenu" update=":InvestigadorListForm:createButton :InvestigadorListForm:viewButton :InvestigadorListForm:editButton :InvestigadorListForm:deleteButton"/>
+                <p:ajax event="rowDblselect" onsuccess="document.getElementById('InvestigadorListForm:viewButton').click();"/>
+
+                <p:column sortBy="#{item.idInvestigador}" filterBy="#{item.idInvestigador}">
+                    <f:facet name="header">
+                        <h:outputText value="#{myBundle.ListInvestigadorTitle_idInvestigador}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.idInvestigador}"/>
+                </p:column>
+
+
+                <p:column sortBy="#{item.inNombres}" filterBy="#{item.inNombres}">
+                    <f:facet name="header">
+                        <h:outputText value="#{myBundle.ListInvestigadorTitle_inNombres}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.inNombres}"/>
+                </p:column>
+
+
+                <p:column sortBy="#{item.inApellido1}" filterBy="#{item.inApellido1}">
+                    <f:facet name="header">
+                        <h:outputText value="#{myBundle.ListInvestigadorTitle_inApellido1}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.inApellido1}"/>
+                </p:column>
+
+
+                <p:column sortBy="#{item.inApellido2}" filterBy="#{item.inApellido2}">
+                    <f:facet name="header">
+                        <h:outputText value="#{myBundle.ListInvestigadorTitle_inApellido2}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.inApellido2}"/>
+                </p:column>
+
+
+                <p:column sortBy="#{item.inTipoIdentificacion}" filterBy="#{item.inTipoIdentificacion}">
+                    <f:facet name="header">
+                        <h:outputText value="#{myBundle.ListInvestigadorTitle_inTipoIdentificacion}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.inTipoIdentificacion}"/>
+                </p:column>
+
+
+                <p:column sortBy="#{item.inNumIdentificacion}" filterBy="#{item.inNumIdentificacion}">
+                    <f:facet name="header">
+                        <h:outputText value="#{myBundle.ListInvestigadorTitle_inNumIdentificacion}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.inNumIdentificacion}"/>
+                </p:column>
+
+                <!--
+                                    <p:column sortBy="#{item.inFechaNac}" filterBy="#{item.inFechaNac}">
+                                        <f:facet name="header">
+                                            <h:outputText value="#{myBundle.ListInvestigadorTitle_inFechaNac}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.inFechaNac}">
+                                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                                        </h:outputText>
+                                    </p:column>
+                -->
+                <!--
+                                    <p:column sortBy="#{item.inDireccion}" filterBy="#{item.inDireccion}">
+                                        <f:facet name="header">
+                                            <h:outputText value="#{myBundle.ListInvestigadorTitle_inDireccion}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.inDireccion}"/>
+                                    </p:column>
+                -->
+                <!--
+                                    <p:column sortBy="#{item.inTelefono}" filterBy="#{item.inTelefono}">
+                                        <f:facet name="header">
+                                            <h:outputText value="#{myBundle.ListInvestigadorTitle_inTelefono}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.inTelefono}"/>
+                                    </p:column>
+                -->
+                <!--
+                                    <p:column sortBy="#{item.inMovil}" filterBy="#{item.inMovil}">
+                                        <f:facet name="header">
+                                            <h:outputText value="#{myBundle.ListInvestigadorTitle_inMovil}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.inMovil}"/>
+                                    </p:column>
+                -->
+                <!--
+                                    <p:column sortBy="#{item.inTipoInves}" filterBy="#{item.inTipoInves}">
+                                        <f:facet name="header">
+                                            <h:outputText value="#{myBundle.ListInvestigadorTitle_inTipoInves}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.inTipoInves}"/>
+                                    </p:column>
+                -->
+                <!--
+                                    <p:column sortBy="#{item.inEstado}" filterBy="#{item.inEstado}">
+                                        <f:facet name="header">
+                                            <h:outputText value="#{myBundle.ListInvestigadorTitle_inEstado}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.inEstado}"/>
+                                    </p:column>
+                -->
+                <!--
+                                    <p:column sortBy="#{item.inSalario}" filterBy="#{item.inSalario}">
+                                        <f:facet name="header">
+                                            <h:outputText value="#{myBundle.ListInvestigadorTitle_inSalario}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.inSalario}"/>
+                                    </p:column>
+                -->
+                <!--
+                                    <p:column sortBy="#{item.inContraseña}" filterBy="#{item.inContraseña}">
+                                        <f:facet name="header">
+                                            <h:outputText value="#{myBundle.ListInvestigadorTitle_inContraseña}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.inContraseña}"/>
+                                    </p:column>
+                -->
+                <!--
+                                    <p:column sortBy="#{item.inObservacion}" filterBy="#{item.inObservacion}">
+                                        <f:facet name="header">
+                                            <h:outputText value="#{myBundle.ListInvestigadorTitle_inObservacion}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.inObservacion}"/>
+                                    </p:column>
+                -->
+
+            </p:dataTable>
+
+            <p:commandButton id="createButton"                             icon="ui-icon-plus"   value="#{myBundle.Create}" actionListener="#{investigadorController.prepareCreate}" update=":InvestigadorCreateForm" oncomplete="PF('InvestigadorCreateDialog').show()"/>
+            <p:commandButton id="viewButton"   style="visibility: hidden;" icon="ui-icon-search" value="#{myBundle.View}" update=":InvestigadorViewForm" oncomplete="PF('InvestigadorViewDialog').show()" disabled="#{empty investigadorController.selected}"/>
+            <p:commandButton id="editButton"   style="visibility: hidden;" icon="ui-icon-pencil" value="#{myBundle.Edit}" update=":InvestigadorEditForm" oncomplete="PF('InvestigadorEditDialog').show()" disabled="#{empty investigadorController.selected}"/>
+            <p:commandButton id="deleteButton" style="visibility: hidden;" icon="ui-icon-trash"  value="#{myBundle.Delete}" actionListener="#{investigadorController.delete}" update=":growl,datalist" disabled="#{empty investigadorController.selected}">
+                <p:confirm header="#{myBundle.ConfirmationHeader}" message="#{myBundle.ConfirmDeleteMessage}" icon="ui-icon-alert"/>
+            </p:commandButton>
+
+        </p:panel>
+        <ui:include src="/confirmation.xhtml"/>
+    </h:form>
+
+</ui:composition>

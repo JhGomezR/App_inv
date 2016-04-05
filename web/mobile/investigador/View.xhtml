@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pm="http://primefaces.org/mobile">
+
+    <pm:page id="InvestigadorViewPage" lazy="true">
+        <pm:header title="#{myBundle.ViewInvestigadorTitle}">
+            <p:button styleClass="ui-btn-left ui-btn-inline" value="#{myBundle.Cancel}" icon="ui-icon-arrow-l" outcome="pm:InvestigadorListPage"/>
+        </pm:header>
+
+        <pm:content>
+
+            <h:form id="InvestigadorViewForm">
+
+                <h:panelGroup id="display">
+                    <p:outputPanel rendered="#{investigadorController.selected != null}">
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_idInvestigador}"/>
+                            <h:outputText value="#{investigadorController.selected.idInvestigador}" title="#{myBundle.ViewInvestigadorTitle_idInvestigador}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inNombres}"/>
+                            <h:outputText value="#{investigadorController.selected.inNombres}" title="#{myBundle.ViewInvestigadorTitle_inNombres}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inApellido1}"/>
+                            <h:outputText value="#{investigadorController.selected.inApellido1}" title="#{myBundle.ViewInvestigadorTitle_inApellido1}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inApellido2}"/>
+                            <h:outputText value="#{investigadorController.selected.inApellido2}" title="#{myBundle.ViewInvestigadorTitle_inApellido2}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inTipoIdentificacion}"/>
+                            <h:outputText value="#{investigadorController.selected.inTipoIdentificacion}" title="#{myBundle.ViewInvestigadorTitle_inTipoIdentificacion}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inNumIdentificacion}"/>
+                            <h:outputText value="#{investigadorController.selected.inNumIdentificacion}" title="#{myBundle.ViewInvestigadorTitle_inNumIdentificacion}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inFechaNac}"/>
+                            <h:outputText value="#{investigadorController.selected.inFechaNac}" title="#{myBundle.ViewInvestigadorTitle_inFechaNac}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inDireccion}"/>
+                            <h:outputText value="#{investigadorController.selected.inDireccion}" title="#{myBundle.ViewInvestigadorTitle_inDireccion}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inTelefono}"/>
+                            <h:outputText value="#{investigadorController.selected.inTelefono}" title="#{myBundle.ViewInvestigadorTitle_inTelefono}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inMovil}"/>
+                            <h:outputText value="#{investigadorController.selected.inMovil}" title="#{myBundle.ViewInvestigadorTitle_inMovil}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inTipoInves}"/>
+                            <h:outputText value="#{investigadorController.selected.inTipoInves}" title="#{myBundle.ViewInvestigadorTitle_inTipoInves}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inEstado}"/>
+                            <h:outputText value="#{investigadorController.selected.inEstado}" title="#{myBundle.ViewInvestigadorTitle_inEstado}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inSalario}"/>
+                            <h:outputText value="#{investigadorController.selected.inSalario}" title="#{myBundle.ViewInvestigadorTitle_inSalario}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inContraseña}"/>
+                            <h:outputText value="#{investigadorController.selected.inContraseña}" title="#{myBundle.ViewInvestigadorTitle_inContraseña}"/>
+                        </pm:field>
+
+                        <pm:field>
+                            <h:outputText value="#{myBundle.ViewInvestigadorLabel_inObservacion}"/>
+                            <h:outputText value="#{investigadorController.selected.inObservacion}" title="#{myBundle.ViewInvestigadorTitle_inObservacion}"/>
+                        </pm:field>
+                    </p:outputPanel>
+                </h:panelGroup>
+
+            </h:form>
+
+        </pm:content>
+
+    </pm:page>
+
+</ui:composition>

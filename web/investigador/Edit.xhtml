@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:dialog id="InvestigadorEditDlg" widgetVar="InvestigadorEditDialog" modal="true" resizable="false"  appendTo="@(body)" header="#{myBundle.EditInvestigadorTitle}" closeOnEscape="true">
+
+            <h:form id="InvestigadorEditForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid  columns="2" columnClasses="column" rendered="#{investigadorController.selected != null}">
+
+
+                        <h:outputLabel value="#{myBundle.EditInvestigadorLabel_idInvestigador}" for="idInvestigador" />
+                        <h:outputText id="idInvestigador" value="#{investigadorController.selected.idInvestigador}" />
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inNombres}" for="inNombres" />
+                        <p:inputText id="inNombres" value="#{investigadorController.selected.inNombres}" title="#{myBundle.EditInvestigadorTitle_inNombres}" required="true" requiredMessage="#{myBundle.EditInvestigadorRequiredMessage_inNombres}" size="45" maxlength="45"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inApellido1}" for="inApellido1" />
+                        <p:inputText id="inApellido1" value="#{investigadorController.selected.inApellido1}" title="#{myBundle.EditInvestigadorTitle_inApellido1}" required="true" requiredMessage="#{myBundle.EditInvestigadorRequiredMessage_inApellido1}" size="25" maxlength="25"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inApellido2}" for="inApellido2" />
+                        <p:inputText id="inApellido2" value="#{investigadorController.selected.inApellido2}" title="#{myBundle.EditInvestigadorTitle_inApellido2}" required="true" requiredMessage="#{myBundle.EditInvestigadorRequiredMessage_inApellido2}" size="25" maxlength="25"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inTipoIdentificacion}" for="inTipoIdentificacion" />
+                        <p:inputText id="inTipoIdentificacion" value="#{investigadorController.selected.inTipoIdentificacion}" title="#{myBundle.EditInvestigadorTitle_inTipoIdentificacion}" required="true" requiredMessage="#{myBundle.EditInvestigadorRequiredMessage_inTipoIdentificacion}" size="30" maxlength="30"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inNumIdentificacion}" for="inNumIdentificacion" />
+                        <p:inputText id="inNumIdentificacion" value="#{investigadorController.selected.inNumIdentificacion}" title="#{myBundle.EditInvestigadorTitle_inNumIdentificacion}" required="true" requiredMessage="#{myBundle.EditInvestigadorRequiredMessage_inNumIdentificacion}"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inFechaNac}" for="inFechaNac" />
+                        <p:calendar id="inFechaNac" pattern="MM/dd/yyyy" value="#{investigadorController.selected.inFechaNac}" title="#{myBundle.EditInvestigadorTitle_inFechaNac}" required="true" requiredMessage="#{myBundle.EditInvestigadorRequiredMessage_inFechaNac}" showOn="button"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inDireccion}" for="inDireccion" />
+                        <p:inputText id="inDireccion" value="#{investigadorController.selected.inDireccion}" title="#{myBundle.EditInvestigadorTitle_inDireccion}" required="true" requiredMessage="#{myBundle.EditInvestigadorRequiredMessage_inDireccion}" size="45" maxlength="45"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inTelefono}" for="inTelefono" />
+                        <p:inputText id="inTelefono" value="#{investigadorController.selected.inTelefono}" title="#{myBundle.EditInvestigadorTitle_inTelefono}" required="true" requiredMessage="#{myBundle.EditInvestigadorRequiredMessage_inTelefono}" size="20" maxlength="20"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inMovil}" for="inMovil" />
+                        <p:inputText id="inMovil" value="#{investigadorController.selected.inMovil}" title="#{myBundle.EditInvestigadorTitle_inMovil}" size="20" maxlength="20"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inTipoInves}" for="inTipoInves" />
+                        <p:inputText id="inTipoInves" value="#{investigadorController.selected.inTipoInves}" title="#{myBundle.EditInvestigadorTitle_inTipoInves}" required="true" requiredMessage="#{myBundle.EditInvestigadorRequiredMessage_inTipoInves}" size="25" maxlength="25"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inEstado}" for="inEstado" />
+                        <p:inputText id="inEstado" value="#{investigadorController.selected.inEstado}" title="#{myBundle.EditInvestigadorTitle_inEstado}" required="true" requiredMessage="#{myBundle.EditInvestigadorRequiredMessage_inEstado}" size="15" maxlength="15"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inSalario}" for="inSalario" />
+                        <p:inputText id="inSalario" value="#{investigadorController.selected.inSalario}" title="#{myBundle.EditInvestigadorTitle_inSalario}" required="true" requiredMessage="#{myBundle.EditInvestigadorRequiredMessage_inSalario}"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inContraseña}" for="inContraseña" />
+                        <p:inputText id="inContraseña" value="#{investigadorController.selected.inContraseña}" title="#{myBundle.EditInvestigadorTitle_inContraseña}" required="true" requiredMessage="#{myBundle.EditInvestigadorRequiredMessage_inContraseña}" size="32" maxlength="32"/>
+
+                        <p:outputLabel value="#{myBundle.EditInvestigadorLabel_inObservacion}" for="inObservacion" />
+                        <p:inputText id="inObservacion" value="#{investigadorController.selected.inObservacion}" title="#{myBundle.EditInvestigadorTitle_inObservacion}" size="200" maxlength="200"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{investigadorController.save}" value="#{myBundle.Save}" update="display,:InvestigadorListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,PF('InvestigadorEditDialog'));">
+                        <p:confirm header="#{myBundle.ConfirmationHeader}" message="#{myBundle.ConfirmEditMessage}" icon="ui-icon-alert"/>
+                    </p:commandButton>
+                    <p:commandButton value="#{myBundle.Cancel}" onclick="PF('InvestigadorEditDialog').hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>
